@@ -131,7 +131,7 @@ class Menu{
     //this  deletes teh bike with in the bike type
     deleteBike(){
        
-        let index = '0';
+        let index = prompt(`what is the index of the bike you would like to delete`);
         if(index > -1 && index < this.selectedBikeTypes.bike.length){
             this.selectedBikeTypes.bike.splice(index,1);
         }
@@ -143,8 +143,8 @@ class Menu{
        let index = prompt('What is the index of the bike, to which you wish to add to the inventory?');
        //prompts return strings. All numbers will be turned into strings. therefor I have to convert strings to numbers using the ES6 Number method.
        let convertedQuantity = Number(this.selectedBikeTypes.bike[index].quantity);
-       //let quantityAdd = Number(prompt('How many of this bike do you want to add to the inventory'));
-       let quantityAdd = prompt('How many of this bike do you want to add to the inventory');
+       
+       let quantityAdd = Number(prompt('How many of this bike do you want to add to the inventory'));
        if(index>-1 && index<this.selectedBikeTypes.bike.length){
             
             this.selectedBikeTypes.bike[index].quantity = convertedQuantity + quantityAdd;
